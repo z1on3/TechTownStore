@@ -13,20 +13,17 @@ const Products = () => {
   const para = useRef(null);
 
   const categories = [
-    "smartphone",
+    "gaming pc",
     "laptop",
-    "smartwatch",
-    "earbuds",
-    "Keyboard",
-    "graphics card",
+    "pc components",
   ];
 
   useEffect(() => {
     const getData = async () => {
       try {
         setIsLoading(true);
-        const res = await fetch("https://itproducts.onrender.com/products");
-        if (!res.ok) throw new Error("Oops! An error has occured");
+        const res = await fetch("http://127.0.0.1:8000/api/products");
+        if (!res.ok) throw new Error("Oops! An error has occurred");
         const json = await res.json();
         setIsLoading(false);
         setProducts(json);
@@ -41,13 +38,13 @@ const Products = () => {
 
   if (isLoading)
     return (
-      <p className="h-screen flex flex-col justify-center items-center text-2xl">
+      <p className="h-screen flex flex-col justify-center items-center text-2xl bg-black text-red-500">
         Loading...
       </p>
     );
   if (err)
     return (
-      <p className="h-screen flex flex-col justify-center items-center text-2xl">
+      <p className="h-screen flex flex-col justify-center items-center text-2xl bg-black text-red-500">
         <span>{err}</span>
         <Link to="/product" className="text-lg text-gray-500 font-semibold">
           &larr;Refresh page
@@ -56,10 +53,10 @@ const Products = () => {
     );
 
   return (
-    <div className="container mx-auto pb-20">
+    <div className="container mx-auto pb-20 bg-black text-red-500">
       <h2 className="text-center text-3xl py-10">All Products</h2>
       <div className="flex justify-between gap-10">
-        <div className="w-[20%] bg-gray-50 flex flex-col gap-3 px-3 pt-2">
+        <div className="w-[20%] bg-black flex flex-col gap-3 px-3 pt-2">
           <h3
             className="select-none cursor-pointer flex justify-between"
             onClick={() => {
@@ -92,7 +89,7 @@ const Products = () => {
             {<Link to="/">Home </Link>}/
             <span className="text-sky-400 px-1">{catPath}</span>
           </p>
-          <div className="grid grid-cols-3 gap-10 ">
+          <div className="grid grid-cols-3 gap-10">
             {filterProducts &&
               filterProducts.map((product) => (
                 <SingleProduct key={product.id} product={product} />

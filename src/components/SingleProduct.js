@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const SingleProduct = ({ product }) => {
-  const { img, title, brand, price } = product;
+  const { img, name, brand, price } = product;
 
   return (
     <div className="single-product flex flex-col bg-black text-white gap-3 shadow-md hover:shadow-xl hover:scale-105 duration-300 px-4 py-7 rounded-sm overflow-hidden">
@@ -9,16 +9,16 @@ const SingleProduct = ({ product }) => {
         <img
           className="w-72 h-48 object-contain hover:scale-110 duration-500"
           src={img}
-          alt={title}
+          alt={name}
         />
       </div>
       <Link
-        to={title}
+        to={name}
         state={product}
         className="hover:text-red-500 duration-300 flex justify-between items-center"
       >
         <h2 className="text-red-500 font-semibold text-xl capitalize">
-          {product.title.slice(0, 20)}
+          {product.name.slice(0, 20)}
         </h2>
       </Link>
       <p className="text-sm text-gray-600">
@@ -29,7 +29,7 @@ const SingleProduct = ({ product }) => {
       </p>
       <div className="flex justify-between items-center">
         <Link
-          to={title}
+          to={name}
           state={product}
           className="hover:text-red-500 text-gray-400 duration-300 flex justify-between items-center"
         >

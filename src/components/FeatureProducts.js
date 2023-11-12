@@ -12,7 +12,7 @@ const FeatureProducts = () => {
       <div className="grid grid-cols-3 gap-10 w-[80%] mx-auto pb-20">
         {products &&
           products
-            .filter((product) => product.category === "gaming-pc")
+            .filter((product) => product.category === "gaming pc")
             .slice(0, 3)
             .map((product) => {
               return <SingleProduct key={product.id} product={product} />;

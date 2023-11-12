@@ -3,20 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 const ProductDetails = () => {
   const { state: product } = useLocation();
 
-  const { img, title, description, category, brand, rating, price } = product;
+  const { img, name, description, category, brand, rating, price } = product;
   return (
     <section className="flex flex-col gap-16 py-10 bg-gray-100">
       <div className="container mx-auto flex justify-around  items-center w-[80%]">
         <div className="w-96 flex justify-end">
-          <img src={img} alt={title} className="w-full select-none" />
+          <img src={img} alt={name} className="w-full select-none" />
         </div>
         <div className="flex flex-col gap-3">
           <p className="text-gray-500">
             {"Home/"}
             {<Link to="/product">product</Link>}
-            {`/${title}`}
+            {`/${name}`}
           </p>
-          <h2 className="text-4xl">{title.slice(0, 30)}</h2>
+          <h2 className="text-4xl">{name.slice(0, 30)}</h2>
           <span className="font-semibold">
             Price: <span className="text-2xl">{price}</span>
           </span>
@@ -49,7 +49,7 @@ const ProductDetails = () => {
         </div>
       </div>
       <Link
-        to="/product"
+        to="/products"
         className="text-xl py-1 text-center hover:text-cyan-500 duration-300 select-none"
       >
         &larr; Go to Product

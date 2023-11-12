@@ -13,7 +13,6 @@ const Home = () => {
       <FeatureProducts />
       <Consultation />
       <BestSelling />
-      <Offers />
       <Whyme />
     </div>
   );
