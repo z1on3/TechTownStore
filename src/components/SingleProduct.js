@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 const SingleProduct = ({ product }) => {
   const { img, name, brand, price } = product;
 
+  var imghost = "http://127.0.0.1:8000/"+img;
+
   return (
     <div className="single-product flex flex-col bg-black text-white gap-3 shadow-md hover:shadow-xl hover:scale-105 duration-300 px-4 py-7 rounded-sm overflow-hidden">
       <div className="flex justify-center">
         <img
           className="w-72 h-48 object-contain hover:scale-110 duration-500"
-          src={img}
+          src={imghost}
           alt={name}
         />
       </div>
